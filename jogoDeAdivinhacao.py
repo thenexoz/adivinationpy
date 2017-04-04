@@ -1,6 +1,6 @@
+#coding: utf-8
 """
     Jogo de Adivinhação Numérica - Versão 0.1
-    
     Contém:
         -Pergunta a identidade do Jogador(Nome);
         -Sistema de Dificuldade;
@@ -11,15 +11,13 @@
         -Interface mais trabalhada;
 """
 #Importação da biblioteca randomica do Python e todas as suas funções
-from random import * 
+from random import *
 
-nome = input("Olá, como e que se chama?") 
-print("Seja bem-vindo ao jogo de adivinhação", nome)
+nome = input("Olá, como e que se chama? ")
+print("\n***Seja bem-vindo ao jogo de adivinhação {name}***\n".format(name=nome))
+print("*** Seleccione a dificuldade que pertende! ***")
+print("* 1 - Fácil\n* 2 - Intermédio\n* 3 - Avançado\n")
 
-print("\n")
-
-print("Seleccione a dificuldade que pertende...")
-print("| (1) - Fácil | (2) - Intermédio | (3) - Avançado |")
 dificuldadeEscolhida = input("Escolha de acordo com as opçoes acima: ")
 
 #Estrutura Condicional (Dificuldade)
@@ -38,16 +36,17 @@ else:
 print("\n")
 
 print("Agora que já escolheu a dificuldade (",dificuldadeEscolhida,") está na hora de jogar. Boa sorte", nome,"!")
-apostaJogador = int(input("Digite a sua aposta: "))
-
+errou = False
 #Estrutura Condicional (Aposta)
-if (apostaJogador > numeroSecreto):
-    print("A sua aposta foi maior que o numero secreto!")
-elif (apostaJogador < numeroSecreto):
-    print("A sua aposta foi menor que o numero secreto!")
-else:
-    print("Parabens! A sua aposta está correta!!")
-
+while errou == False:
+	apostaJogador = int(input("Digite a sua aposta: "))
+	if (apostaJogador > numeroSecreto):
+		print("A sua aposta foi maior que o numero secreto!")
+	elif (apostaJogador < numeroSecreto):
+		print("A sua aposta foi menor que o numero secreto!")
+	else:
+		print("Parabens! A sua aposta está correta!!")
+		errou = True
 
 """
     ZONA DE CRÉDITOS || PROGRAMADORES DO PROJETO:
