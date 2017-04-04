@@ -40,9 +40,9 @@ errou = False
 #Estrutura Condicional (Aposta)
 while errou == False:
 	apostaJogador = int(input("Digite a sua aposta: "))
-	if (apostaJogador > numeroSecreto):
+	if (apostaJogador >= numeroSecreto):
 		print("A sua aposta foi maior que o numero secreto!")
-	elif (apostaJogador < numeroSecreto):
+	elif (apostaJogador <= numeroSecreto):
 		print("A sua aposta foi menor que o numero secreto!")
 	else:
 		print("Parabens! A sua aposta está correta!!")
